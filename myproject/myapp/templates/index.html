@@ -1,0 +1,33 @@
+{% load my_extras %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyApp page</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            font-size: 18p;
+            color: #19b6b6;
+            background-color: rgb(38, 41, 41)
+        }
+    </style>
+</head>
+
+<body>
+    {# Использование фильтра #}
+    {{ "Hello World"|half_string }}
+
+    {# Использование тега #}
+    {% split_string "apple,banana,carrot" "," as my_list %}
+    <ul>
+        {% for item in my_list %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
